@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #eef4ef;
+  --surface: #fbfdfb;
+  --border: #dfe8e1;
+  --primary: #07893f;
+  --primary-hover: #066f34;
+  --ink: #1d2a20;
+  --muted: #6b7a70;
+  --up: #d13b3b;
+  --down: #0f9a4b;
+  --flat: #6b7a70;
+}
+
+html,
+body {
+  overflow-x: clip;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-bn), "Hind Siliguri", system-ui, sans-serif;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  animation: ticker 60s linear infinite;
+  width: max-content;
+}
+
+.ticker-track:hover { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
